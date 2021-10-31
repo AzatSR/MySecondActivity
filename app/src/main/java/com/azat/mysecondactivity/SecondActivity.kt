@@ -28,20 +28,19 @@ class SecondActivity : AppCompatActivity() {
 
 /*объвляем интент, объявляем value и принимаем значение с MainActivity,
 в виде всплывающего сообщения*/
-        val intent1 = intent
-        val value = intent1.extras?.getString(KEY)
-        Toast.makeText(this,value, Toast.LENGTH_SHORT).show()
+        val getValueFromMainActivity = intent.extras?.getString(KEY)
+        Toast.makeText(this,getValueFromMainActivity, Toast.LENGTH_SHORT).show()
 
 //объявляем интент2 и передаем по ключу KEY2 значение в ThirdActivity
-        val intent2 = Intent(this, ThirdActivity::class.java)
-        intent2.putExtra(KEY2, "шаг 2")
+        val secondActivityintent = Intent(this, ThirdActivity::class.java)
+        secondActivityintent.putExtra(KEY2, "шаг 2")
 
 //запускаем интент по кнопкам на ThirdActivity
         buttonHours.setOnClickListener {
-            startActivity(intent2)
+            startActivity(secondActivityintent)
         }
         buttonSmena.setOnClickListener {
-            startActivity(intent2)
+            startActivity(secondActivityintent)
         }
 
     }

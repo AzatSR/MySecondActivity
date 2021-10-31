@@ -21,17 +21,16 @@ class ThirdActivity : AppCompatActivity() {
         poiskovik = findViewById(R.id.poiskovik)
 
 //объявляем интент и запрашиваем данные по ключу
-        val intent = intent
-        val value = intent.extras?.getString(KEY2)
+        val getValueFromSecondActivity = intent.extras?.getString(KEY2)
 //выводим сообщение всплывающее
-        Toast.makeText(this, value, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getValueFromSecondActivity, Toast.LENGTH_SHORT).show()
 
 //создаем неявный интент в виде ссылки
         val link = Uri.parse("https://www.avito.ru/rossiya/predlozheniya_uslug?q=грузчики")
-        val intent3 = Intent(Intent.ACTION_VIEW, link)
+        val thirdActivityintent = Intent(Intent.ACTION_VIEW, link)
 //запускаем поиск
         poiskovik.setOnClickListener{
-            startActivity(intent3)
+            startActivity(thirdActivityintent)
         }
 
     }
